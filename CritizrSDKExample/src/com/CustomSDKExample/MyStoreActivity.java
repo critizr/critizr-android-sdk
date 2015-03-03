@@ -29,7 +29,7 @@ public class MyStoreActivity extends Activity implements CritizrListener{
 			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this);
 			
 		}else if(view.getId() == R.id.my_store_btn){
-			int externalPlaceId = 12;    /*External place id I choose for my example - Bolibio Valencienne*/
+			String externalPlaceId = "12";    /*External place id I choose for my example - Bolibio Valencienne*/
 			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this, externalPlaceId);
 		}
 		
@@ -37,7 +37,7 @@ public class MyStoreActivity extends Activity implements CritizrListener{
 
 	@Override
 	public void onFeedbackSent() {
-		Log.d(DEBUG_TAG, "Feedback sent with externalPlaceId");
+		Log.d(DEBUG_TAG, "Feedback sent");
 		
 	}
 	

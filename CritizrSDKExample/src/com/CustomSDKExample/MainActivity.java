@@ -36,7 +36,7 @@ public class MainActivity extends Activity implements CritizrListener{
 
 	@Override
 	public void onFeedbackSent() {
-		Log.d(DEBUG_TAG, "Feedback sent without externalPlaceId");
+		Log.d(DEBUG_TAG, "Feedback sent");
 		
 	}
 	
