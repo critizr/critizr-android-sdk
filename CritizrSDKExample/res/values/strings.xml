@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Bolibio</string>
-	<string name="api_key">15a2e2ea8b794e977e28f8534929ebe7</string>
+	<string name="critizr_api_key">15a2e2ea8b794e977e28f8534929ebe7</string>
 	<string name="click_here">Cliquer ici</string>
 	<string name="click_here_to_see_your_store">Accéder à votre page magasin</string>
 	<string name="send_a_feedback">Envoyer une remarque</string>

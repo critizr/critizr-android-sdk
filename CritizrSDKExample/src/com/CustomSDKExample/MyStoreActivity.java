@@ -24,21 +24,20 @@ public class MyStoreActivity extends Activity implements CritizrListener{
 
 	public void MyStoreClickMethod(View view) {
 		
-		String apiKey = MyStoreActivity.this.getResources().getString(R.string.api_key);
+		String apiKey = MyStoreActivity.this.getResources().getString(R.string.critizr_api_key);
 		if(view.getId() == R.id.storelocator_btn){
-			CritizrSDK.getInstance(apiKey).openStorLocator(this, this);
+			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this);
 			
 		}else if(view.getId() == R.id.my_store_btn){
-			String externalPlaceId = "1235";    /*External place id I choose for my example */
-			CritizrSDK.getInstance(apiKey).openStore(this, this, externalPlaceId);
+			int externalPlaceId = 12;    /*External place id I choose for my example - Bolibio Valencienne*/
+			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this, externalPlaceId);
 		}
 		
 	}
 
 	@Override
-	public void onMessageSent() {
-		Log.d(DEBUG_TAG, "Remark sent from MyStoreActivity");
-
+	public void onFeedbackSent() {
+		Log.d(DEBUG_TAG, "Feedback sent with externalPlaceId");
 		
 	}
 	

@@ -24,10 +24,10 @@ public class MainActivity extends Activity implements CritizrListener{
 	
 	
 	public void MainClickMethod(View view) {
-		String apiKey = this.getResources().getString(R.string.api_key);
+		String apiKey = this.getResources().getString(R.string.critizr_api_key);
 
 		if(view.getId() == R.id.storelocator_btn){
-			CritizrSDK.getInstance(apiKey).openStorLocator(this, this);
+			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this);
 		}else if(view.getId() == R.id.my_store_btn){
 			MainActivity.this.startActivity(new Intent(this, MyStoreActivity.class));
 		}
@@ -35,8 +35,8 @@ public class MainActivity extends Activity implements CritizrListener{
 	}
 
 	@Override
-	public void onMessageSent() {
-		Log.d(DEBUG_TAG, "Remark sent from MainActivity");
+	public void onFeedbackSent() {
+		Log.d(DEBUG_TAG, "Feedback sent without externalPlaceId");
 		
 	}
 	
