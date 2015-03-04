@@ -27,7 +27,7 @@
         </activity>
         
         <activity android:name="MyStoreActivity"/>
-        <activity android:name="com.CritizrCustomSDK.CritizrActivity"/>
+        <activity android:name="com.CritizrSDK.CritizrActivity"/>
         
     </application>
 
