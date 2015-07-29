@@ -39,5 +39,12 @@ public class MainActivity extends Activity implements CritizrListener{
 		Log.d(DEBUG_TAG, "Feedback sent");
 		
 	}
+
+
+	@Override
+	public void onRatingResult(double arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
