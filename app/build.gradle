@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 17
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.CritizrSDKExample"
         minSdkVersion 11
-        targetSdkVersion 22
+        targetSdkVersion 17
     }
 
     buildTypes {
@@ -30,5 +30,5 @@ repositories {
 
 dependencies {
     compile 'com.android.support:support-v4:22.2.1'
-    compile(name:'critizr-sdk', ext:'aar')
+    compile(name:'critizrsdkpreprod', ext:'aar')
 }
