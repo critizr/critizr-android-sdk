@@ -1,61 +1,61 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/background_color">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+    
+     <RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginBottom="70dp"
+	    android:layout_marginTop="60dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:layout_alignParentTop="true"
+	    >
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="70dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="60dp"
-        >
-
-        <TextView
-            android:id="@+id/widget_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/welcome_to_bolibio_france"
-            android:textColor="@color/text_color"
-            android:textSize="24sp"
-            />
-
-        <Button
-            android:id="@+id/storelocator_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/widget_tv"
-            android:layout_marginTop="50dp"
-            android:background="@color/button_color"
-            android:onClick="MainClickMethod"
-            android:text="@string/send_a_feedback"
-            android:textColor="@color/white_color"
-            android:textSize="18sp"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        >
-
-        <TextView
-            android:id="@+id/my_store_btn"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentRight="true"
-            android:background="@color/button_color"
-            android:clickable="true"
-            android:gravity="center"
-            android:onClick="MainClickMethod"
-            android:text="@string/click_here_to_see_your_store"
-            android:textColor="@color/white_color"
-            android:textSize="18sp"/>
-
-    </RelativeLayout>
-
+	    <TextView
+	        android:id="@+id/widget_tv"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/text_color"
+	        android:gravity="center"
+	        android:textSize="24sp"
+	        android:text="@string/welcome_to_bolibio_france"
+	        />
+	    
+	     <Button  
+	        android:id="@+id/storelocator_btn"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:onClick="MainClickMethod"
+	        android:textColor="@color/white_color"
+	        android:background="@color/button_color"
+	        android:textSize="18sp"
+	        android:layout_below="@+id/widget_tv"
+	        android:layout_marginTop="50dp"
+	        android:text="@string/send_a_feedback" />    
+	        
+	 </RelativeLayout>
+		   
+     <RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="60dp"
+	    android:layout_alignParentBottom="true"
+	    >
+	      
+	    <TextView  
+	        android:id="@+id/my_store_btn"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:onClick="MainClickMethod"
+	        android:clickable="true"
+	        android:layout_alignParentRight="true"
+	        android:textColor="@color/white_color"
+	        android:background="@color/button_color"
+	        android:textSize="18sp"
+	        android:gravity="center"
+	        android:text="@string/click_here_to_see_your_store" />
+	    
+	</RelativeLayout>
+	
 </RelativeLayout>
