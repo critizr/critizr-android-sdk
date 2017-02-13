@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Bolibio</string>
-	<string name="critizr_api_key">3f672def9b5902a4eb4ab5c936bc7b0d</string>
+	<string name="critizr_api_key">7f614697ac3524af3ca4ce0df9164caf</string>
 	<string name="click_here">Cliquer ici</string>
 	<string name="click_here_to_see_your_store">Accéder à votre page magasin</string>
 	<string name="send_a_feedback">Envoyer une remarque</string>
