@@ -10,6 +10,17 @@ import android.view.View;
 import com.CritizrSDK.CritizrListener;
 import com.CritizrSDK.CritizrSDK;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Objects;
+
+import static android.content.ContentValues.TAG;
+import static java.lang.System.in;
+
 public class MainActivity extends Activity implements CritizrListener{
 	
 	public static final String DEBUG_TAG = "CRITIZR_SDK";
@@ -27,7 +38,14 @@ public class MainActivity extends Activity implements CritizrListener{
 		String apiKey = this.getResources().getString(R.string.critizr_api_key);
 
 		if(view.getId() == R.id.storelocator_btn){
-			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this);
+			JSONObject object = new JSONObject();
+			try {
+				object.put("mode", "feedback");
+				object.put("user", "guillaume|guillaume@critizr.com");
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this, object);
 		}else if(view.getId() == R.id.my_store_btn){
 			MainActivity.this.startActivity(new Intent(this, MyStoreActivity.class));
 		}
