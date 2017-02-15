@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bolibio</string>
+    <string name="app_name">Velo</string>
 	<string name="critizr_api_key">7f614697ac3524af3ca4ce0df9164caf</string>
+	<string name="external_place_id">velo-aix-en-provence</string>
 	<string name="click_here">Cliquer ici</string>
 	<string name="click_here_to_see_your_store">Accéder à votre page magasin</string>
 	<string name="send_a_feedback">Envoyer une remarque</string>
-	<string name="welcome_to_bolibio_france">Bienvenue chez Bolibio France</string>
-	<string name="bolibio_valencienne">Bolibio Paris XI</string>
+	<string name="welcome_to_bolibio_france">Bienvenue chez Velo France</string>
+	<string name="bolibio_valencienne">Velo Aix En Provence</string>
     <string name="opening_hours">9h-12h et 14h-19h</string>
     <string name="opening_days">Ouvert du lundi au samedi</string>
 	<string name="contact_director">Contacter le gérant</string>
