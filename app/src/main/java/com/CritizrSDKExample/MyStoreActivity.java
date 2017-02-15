@@ -22,10 +22,9 @@ public class MyStoreActivity extends Activity implements CritizrListener{
 
 		this.getActionBar().hide();
 
-//		/* To get place Rating */
         try {
             String apiKey = MyStoreActivity.this.getResources().getString(R.string.critizr_api_key);
-            String externalPlaceId = "velo-paris-xvii";
+            String externalPlaceId = this.getResources().getString(R.string.external_place_id);
             CritizrSDK.getInstance(apiKey).getPlaceRating(externalPlaceId, this);
         }catch (Exception e){
             e.printStackTrace();
@@ -38,13 +37,13 @@ public class MyStoreActivity extends Activity implements CritizrListener{
 			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this, null);
 		}else if(view.getId() == R.id.my_store_btn){
             JSONObject object = new JSONObject();
-            try {
-                object.put("mode", "feedback");
-                object.put("user", "guillaume|guillaume@critizr.com");
+                try {
+                    object.put("mode", "feedback");
+					object.put("user", "YXJuYXVkfGFybmF1ZC5sYW5jZWxvdEBjcml0aXpyLmNvbQ=="); // arnaud|arnaud.lancelot@critizr.com en BASE64
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            String externalPlaceId = "velo-paris-xvii";    /*External place id I choose for my example - VELO PARIS*/
+            String externalPlaceId = this.getResources().getString(R.string.external_place_id);
 			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this, externalPlaceId, object);
 		}
 	}
