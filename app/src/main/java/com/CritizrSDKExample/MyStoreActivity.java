@@ -57,4 +57,9 @@ public class MyStoreActivity extends Activity implements CritizrListener{
 	public void onRatingResult(double rating) {
 		Log.d(DEBUG_TAG, "Place Rating is "+rating);		
 	}
+
+	@Override
+	public void onRatingError() {
+		Log.i("INFO", "Error while fetching the place rating");
+	}
 }

@@ -31,5 +31,5 @@ repositories {
 
 dependencies {
     compile 'com.android.support:support-v4:23.1.1'
-    compile name:'critizr-sdk-preprod-1.2.1', ext:'aar'
+    compile name:'critizr-sdk-preprod-1.2.2', ext:'aar'
 }

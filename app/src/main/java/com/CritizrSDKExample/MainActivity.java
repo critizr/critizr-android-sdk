@@ -56,5 +56,10 @@ public class MainActivity extends Activity implements CritizrListener{
 		// TODO Auto-generated method stub
 		
 	}
-	
+
+	@Override
+	public void onRatingError() {
+		Log.i("INFO", "Error while fetching the place rating");
+	}
+
 }
