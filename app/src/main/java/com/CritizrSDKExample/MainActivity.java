@@ -7,13 +7,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.CritizrSDK.CritizrListener;
+import com.CritizrSDK.CritizrConfig;
 import com.CritizrSDK.CritizrSDK;
+import com.CritizrSDK.listeners.FeedbackListener;
+import com.CritizrSDK.models.CzEnvironment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MainActivity extends Activity implements CritizrListener{
+public class MainActivity extends Activity implements FeedbackListener {
 	
 	public static final String DEBUG_TAG = "CRITIZR_SDK";
 	
@@ -21,14 +23,20 @@ public class MainActivity extends Activity implements CritizrListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		this.getActionBar().hide();
+
+		String apiKey = this.getResources().getString(R.string.critizr_api_key);
+
+		CritizrConfig.getInstance().setCzEnvironement(CzEnvironment.PRE_PRODUCTION);
+		CritizrConfig.getInstance().setApiKey(apiKey);
+
+		CritizrSDK.getInstance().openFeedbackActivityFromDeepLink(this, "https://critizr.com/z/NHWsiN/");
+
 	}
 	
 	
 	public void MainClickMethod(View view) {
-		String apiKey = this.getResources().getString(R.string.critizr_api_key);
-
 		if(view.getId() == R.id.storelocator_btn){
             JSONObject object = new JSONObject();
             try {
@@ -38,7 +46,7 @@ public class MainActivity extends Activity implements CritizrListener{
                 e.printStackTrace();
             }
 
-			CritizrSDK.getInstance(apiKey).openFeedbackActivity(this, this, object);
+			CritizrSDK.getInstance().openFeedbackActivity(this, object);
 		}else if(view.getId() == R.id.my_store_btn){
 			MainActivity.this.startActivity(new Intent(this, MyStoreActivity.class));
 		}
@@ -46,20 +54,7 @@ public class MainActivity extends Activity implements CritizrListener{
 	}
 
 	@Override
-	public void onFeedbackSent() {
+	public void setOnFeedbackSentListener() {
 		Log.d(DEBUG_TAG, "Feedback sent");
 	}
-
-
-	@Override
-	public void onRatingResult(double arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onRatingError() {
-		Log.i("INFO", "Error while fetching the place rating");
-	}
-
 }
