@@ -32,22 +32,14 @@ public class MainActivity extends Activity implements FeedbackListener {
 		CritizrConfig.getInstance().setApiKey(apiKey);
 
 		Intent intent = getIntent();
-		Log.i("INFO", "I'm in onCreate method");
 		if (intent != null){
-			Log.i("INFO", "GOT INTENT");
 			String action = intent.getAction();
-			Log.i("INFO", "TRYING ACTION");
 			if (action != null){
-				Log.i("INFO", "GOT INTENT");
 				Uri data = intent.getData();
-				if (data != null && data.getAuthority() != null){
-					Log.i("INFO", "GOT AUTHORITY " + data.getAuthority());
-				}
 				if (data != null && data.getAuthority() != null
 						&& (data.getAuthority().startsWith("critizr.herokuapp.com")
 						|| data.getAuthority().startsWith("critizr.com")
 						|| data.getAuthority().startsWith("preprod.critizr.com"))){
-					Log.i("INFO", "DEEP LINK -> " + data.toString());
 					CritizrSDK.getInstance().openFeedbackActivityFromDeepLink(this, data.toString());
 				}
 			}
@@ -56,22 +48,14 @@ public class MainActivity extends Activity implements FeedbackListener {
 
 	@Override
 	protected void onNewIntent(Intent intent){
-		Log.i("INFO", "I'm in onNewIntent method");
 		if (intent != null){
-			Log.i("INFO", "GOT INTENT");
 			String action = intent.getAction();
-			Log.i("INFO", "TRYING ACTION");
 			if (action != null){
-				Log.i("INFO", "GOT INTENT");
 				Uri data = intent.getData();
-				if (data != null && data.getAuthority() != null){
-					Log.i("INFO", "GOT AUTHORITY" + data.getAuthority());
-				}
 				if (data != null && data.getAuthority() != null
 						&& (data.getAuthority().startsWith("critizr.herokuapp.com")
 						|| data.getAuthority().startsWith("critizr.com")
 						|| data.getAuthority().startsWith("preprod.critizr.com"))){
-					Log.i("INFO", "DEEP LINK -> " + data.toString());
 					CritizrSDK.getInstance().openFeedbackActivityFromDeepLink(this, data.toString());
 				}
 			}
