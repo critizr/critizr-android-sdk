@@ -36,7 +36,7 @@ public class MyStoreActivity extends Activity implements FeedbackListener, Ratin
             JSONObject object = new JSONObject();
 			try {
 				object.put("mode", "feedback");
-				object.put("user", "YXJuYXVkfGFybmF1ZC5sYW5jZWxvdEBjcml0aXpyLmNvbQ=="); // arnaud|arnaud.lancelot@critizr.com en BASE64
+//				object.put("user", "YXJuYXVkfGFybmF1ZC5sYW5jZWxvdEBjcml0aXpyLmNvbQ=="); // arnaud|arnaud.lancelot@critizr.com en BASE64
             } catch (JSONException e) {
                 e.printStackTrace();
             }

@@ -3,6 +3,7 @@ package com.CritizrSDKExample;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,12 +28,54 @@ public class MainActivity extends Activity implements FeedbackListener {
 		this.getActionBar().hide();
 
 		String apiKey = this.getResources().getString(R.string.critizr_api_key);
-
-		CritizrConfig.getInstance().setCzEnvironement(CzEnvironment.PRE_PRODUCTION);
+		CritizrConfig.getInstance().setCzEnvironement(CzEnvironment.PRODUCTION);
 		CritizrConfig.getInstance().setApiKey(apiKey);
 
-		CritizrSDK.getInstance().openFeedbackActivityFromDeepLink(this, "https://critizr.com/z/NHWsiN/");
+		Intent intent = getIntent();
+		Log.i("INFO", "I'm in onCreate method");
+		if (intent != null){
+			Log.i("INFO", "GOT INTENT");
+			String action = intent.getAction();
+			Log.i("INFO", "TRYING ACTION");
+			if (action != null){
+				Log.i("INFO", "GOT INTENT");
+				Uri data = intent.getData();
+				if (data != null && data.getAuthority() != null){
+					Log.i("INFO", "GOT AUTHORITY " + data.getAuthority());
+				}
+				if (data != null && data.getAuthority() != null
+						&& (data.getAuthority().startsWith("critizr.herokuapp.com")
+						|| data.getAuthority().startsWith("critizr.com")
+						|| data.getAuthority().startsWith("preprod.critizr.com"))){
+					Log.i("INFO", "DEEP LINK -> " + data.toString());
+					CritizrSDK.getInstance().openFeedbackActivityFromDeepLink(this, data.toString());
+				}
+			}
+		}
+	}
 
+	@Override
+	protected void onNewIntent(Intent intent){
+		Log.i("INFO", "I'm in onNewIntent method");
+		if (intent != null){
+			Log.i("INFO", "GOT INTENT");
+			String action = intent.getAction();
+			Log.i("INFO", "TRYING ACTION");
+			if (action != null){
+				Log.i("INFO", "GOT INTENT");
+				Uri data = intent.getData();
+				if (data != null && data.getAuthority() != null){
+					Log.i("INFO", "GOT AUTHORITY" + data.getAuthority());
+				}
+				if (data != null && data.getAuthority() != null
+						&& (data.getAuthority().startsWith("critizr.herokuapp.com")
+						|| data.getAuthority().startsWith("critizr.com")
+						|| data.getAuthority().startsWith("preprod.critizr.com"))){
+					Log.i("INFO", "DEEP LINK -> " + data.toString());
+					CritizrSDK.getInstance().openFeedbackActivityFromDeepLink(this, data.toString());
+				}
+			}
+		}
 	}
 	
 	
@@ -41,7 +84,6 @@ public class MainActivity extends Activity implements FeedbackListener {
             JSONObject object = new JSONObject();
             try {
                 object.put("mode", "feedback");
-                object.put("user", "YXJuYXVkfGFybmF1ZC5sYW5jZWxvdEBjcml0aXpyLmNvbQ=="); // arnaud|arnaud.lancelot@critizr.com en BASE64
             } catch (JSONException e) {
                 e.printStackTrace();
             }

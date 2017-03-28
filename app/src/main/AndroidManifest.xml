@@ -17,9 +17,20 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
+            android:launchMode="singleTask"
             android:name="com.CritizrSDKExample.MainActivity"
-            android:label="@string/app_name"
-            >
+            android:label="@string/app_name">
+            <!--APP Links-->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="preprod.critizr.com" />
+                <data android:scheme="https" android:host="critizr.com" />
+                <data android:scheme="https" android:host="critizr.herokuapp.com" />
+            </intent-filter>
+            <!-- END APP Links-->
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
