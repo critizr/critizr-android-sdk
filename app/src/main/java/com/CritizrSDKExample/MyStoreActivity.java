@@ -31,7 +31,7 @@ public class MyStoreActivity extends Activity implements FeedbackListener, Ratin
 
 	public void MyStoreClickMethod(View view) {
 		if(view.getId() == R.id.storelocator_btn){
-			CritizrSDK.getInstance().openFeedbackActivity(this, null);
+			CritizrSDK.getInstance().openStoreLocator(this, null);
 		}else if(view.getId() == R.id.my_store_btn){
             JSONObject object = new JSONObject();
 			try {
@@ -40,7 +40,7 @@ public class MyStoreActivity extends Activity implements FeedbackListener, Ratin
                 e.printStackTrace();
             }
             String externalPlaceId = this.getResources().getString(R.string.external_place_id);
-			CritizrSDK.getInstance().openFeedbackActivity(this, externalPlaceId, object);
+			CritizrSDK.getInstance().giveFeedback(this, externalPlaceId, object);
 		}
 	}
 

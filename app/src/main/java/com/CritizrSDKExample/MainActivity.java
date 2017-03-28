@@ -40,7 +40,7 @@ public class MainActivity extends Activity implements FeedbackListener {
 						&& (data.getAuthority().startsWith("critizr.herokuapp.com")
 						|| data.getAuthority().startsWith("critizr.com")
 						|| data.getAuthority().startsWith("preprod.critizr.com"))){
-					CritizrSDK.getInstance().openFeedbackActivityFromDeepLink(this, data.toString());
+					CritizrSDK.getInstance().giveFeedback(this, data.toString());
 				}
 			}
 		}
@@ -56,7 +56,7 @@ public class MainActivity extends Activity implements FeedbackListener {
 						&& (data.getAuthority().startsWith("critizr.herokuapp.com")
 						|| data.getAuthority().startsWith("critizr.com")
 						|| data.getAuthority().startsWith("preprod.critizr.com"))){
-					CritizrSDK.getInstance().openFeedbackActivityFromDeepLink(this, data.toString());
+					CritizrSDK.getInstance().giveFeedback(this, data.toString());
 				}
 			}
 		}
@@ -72,7 +72,7 @@ public class MainActivity extends Activity implements FeedbackListener {
                 e.printStackTrace();
             }
 
-			CritizrSDK.getInstance().openFeedbackActivity(this, object);
+			CritizrSDK.getInstance().openStoreLocator(this, object);
 		}else if(view.getId() == R.id.my_store_btn){
 			MainActivity.this.startActivity(new Intent(this, MyStoreActivity.class));
 		}
